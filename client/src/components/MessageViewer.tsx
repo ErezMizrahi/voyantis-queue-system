@@ -7,7 +7,7 @@ interface MessageViewerProps {
 const MessageViewer = ({ message }: MessageViewerProps ) => {
     return (
         <div className="message-viewer">
-            <p>{message || 'Select a queue and click "Go" to fetch the latest message.'}</p>
+            <p>{message || 'Empty.'}</p>
         </div>
     );
 };

@@ -10,7 +10,7 @@ A modern queue management system with a REST API and web interface, built with E
 - Real-time queue status monitoring
 - TypeScript implementation for type safety
 
-### Frontend (React + Vite + TypeScript)
+### client (React + Vite + TypeScript)
 - Dynamic queue visualization
 - Real-time message count display
 - Interactive queue selection
@@ -38,16 +38,16 @@ npm install
 
 3. Start the development server
 ```bash
-npm run dev
+npm run start
 ```
 
 The server will be available at `http://localhost:3000`
 
-### Frontend Setup
+### client Setup
 
-1. Navigate to the frontend directory
+1. Navigate to the client directory
 ```bash
-cd ../frontend
+cd ../client
 ```
 
 2. Install dependencies
@@ -60,7 +60,7 @@ npm install
 npm run dev
 ```
 
-The frontend will be available at `http://localhost:5173`
+The client will be available at `http://localhost:5173`
 
 ## 📡 API Reference
 
@@ -86,7 +86,7 @@ GET /api/{queue_name}?timeout={ms}
 - TypeScript
 - Node.js
 
-### Frontend
+### client
 - React
 - Vite
 - TypeScript

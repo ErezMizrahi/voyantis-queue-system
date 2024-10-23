@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query';
+import { QueryClient, useQuery } from '@tanstack/react-query';
 import Header from './components/Header';
 import QueueList from './components/QueueList';
 import MessageViewer from './components/MessageViewer';
@@ -14,8 +14,9 @@ function App() {
     const [message, setMessage] = useState('');
 
     // Fetch queues
-    const { data: queues = {}, isLoading, error } = useQuery({
+    const { data: queues = {}, refetch: refetchQueues, isLoading, error } = useQuery({
         queryKey: ['queues'],
+        
         queryFn: async () => {
             const response = await axios.get('http://localhost:3000/api/');
             return response.data;
@@ -42,7 +43,9 @@ function App() {
 
     const handleFetchMessage = () => {
         if (selectedQueue) {
-            refetchQueueMessage(); // Manually trigger the refetch
+            refetchQueueMessage(); 
+            refetchQueues();
+
         }
     };
 
